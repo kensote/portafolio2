@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Administración de RRHH</title>
+    <link rel="stylesheet" href="RRHH.css">
+  </head>
+  <body>
+    <header>
+      <h1>Administración de Recursos Humanos</h1>
+    </header>
+    <nav id="nav">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a >Empleados</a></li>
+        <li><a >Nóminas</a></li>
+        <li><a >Permisos</a></li>
+        <li><a >Reportes</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Empleados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Fecha de Contratación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>Gerente</td>
+            <td>01/01/2021</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Asistente Administrativo</td>
+            <td>01/02/2021</td>
+          </tr>
+        </tbody>
+      </table>
+      <section id="nominas" class="nominas">
+
+      </section>
+      <section id="permisos" class="permisos">
+
+      </section>
+      <section id="reportes" class="reportes">
+
+      </section>
+    </main>
+    <footer>
+      <p>Derechos Reservados © 2023</p>
+    </footer>
+    <script>
+        const navLinks = document.querySelectorAll('#nav a');
+      
+        navLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.innerText.toLowerCase();
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      </script>
+      
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Administración de RRHH</title>
+    <style>
+      /* Estilos para el encabezado */
+header {
+    background-color: #0d3e61;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Estilos para la navegación */
+  nav {
+    background-color: #444;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  nav li {
+    margin: 0 1rem;
+  }
+  
+  nav a {
+    display: block;
+    padding: 1rem;
+    color: #0d3e61;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover {
+    color: #ff7f50;
+  }
+  
+  /* Estilos para la tabla de empleados */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  thead {
+    background-color: #0d3e61;
+    color: white;
+  }
+  
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para las secciones de permisos y nóminas */
+  section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f2f2f2;
+    margin-top: 70px;
+    padding-top: 80px;
+  }
+  
+  section h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  section label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  section select,
+  section input[type="text"],
+  section input[type="date"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  section button[type="submit"] {
+    background-color: #0d3e61;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #permisos-list {
+    margin-top: 1rem;
+  }
+  
+  #permisos-list h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  #permisos-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  #permisos-list li span {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  h1, h2, p {
+  position: absolute; 
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Administración de Recursos Humanos</h1>
+    </header>
+    <nav id="nav" >
+      <ul>
+        <li><a href="#empleados">Empleados</a></li>
+        <li><a href="#nominas">Nóminas</a></li>
+        <li><a href="#permisos">Permisos</a></li>
+        <li><a href="#reportes">Reportes</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2 id="empleados">Empleados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Fecha de Contratación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>Gerente</td>
+            <td>01/01/2021</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Asistente Administrativo</td>
+            <td>01/02/2021</td>
+          </tr>
+        </tbody>
+      </table>
+      <section id="nominas" class="nominas">
+        <div>
+            <h3>Generar Nómina</h3>
+            <form>
+              <label for="mes">Mes:</label>
+              <input type="text" id="mes" name="mes">
+              <label for="año">Año:</label>
+              <input type="text" id="año" name="año">
+              <input type="submit" value="Generar">
+            </form>
+          </div>
+          <div>
+            <h3>Historial de Nóminas</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Mes</th>
+                  <th>Año</th>
+                  <th>Descargar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01/01/2023</td>
+                  <td>Enero</td>
+                  <td>2023</td>
+                  <td><a href="#">Descargar</a></td>
+                </tr>
+                <tr>
+                  <td>01/12/2022</td>
+                  <td>Diciembre</td>
+                  <td>2022</td>
+                  <td><a href="#">Descargar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </section>
+    <section id="permisos" class="permisos">
+        <section id="permisos" class="permisos">
+            <div>
+              <h3>Permisos</h3>
+              <form id="permisos-form">
+                <label for="empleado">Empleado:</label>
+                <select id="empleado" name="empleado">
+                  <option value="john-doe">John Doe</option>
+                  <option value="jane-smith">Jane Smith</option>
+                </select>
+                <label for="tipo-permiso">Tipo de Permiso:</label>
+                <select id="tipo-permiso" name="tipo-permiso">
+                  <option value="vacaciones">Vacaciones</option>
+                  <option value="enfermedad">Enfermedad</option>
+                  <option value="personal">Asuntos personales</option>
+                </select>
+                <label for="fecha-inicio">Fecha de inicio:</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio">
+                <label for="fecha-fin">Fecha de fin:</label>
+                <input type="date" id="fecha-fin" name="fecha-fin">
+                <button type="submit">Solicitar Permiso</button>
+              </form>
+              <div id="permisos-list">
+                <h4>Permisos Solicitados</h4>
+                <ul>
+                  <li>
+                    <span>John Doe</span>
+                    <span>Vacaciones</span>
+                    <span>01/07/2023 - 15/07/2023</span>
+                  </li>
+                  <li>
+                    <span>Jane Smith</span>
+                    <span>Asuntos personales</span>
+                    <span>10/07/2023 - 11/07/2023</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          
+    </section>
+    <section id="reportes" class="reportes">
+        <div>
+            <p>Reportes</p>
+        </div>
+    </section>
+  </main>
+  <footer>
+    <p>Derechos Reservados © 2023</p>
+  </footer>
+  <script >
+    // Selección de elementos del DOM
+const navLinks = document.querySelectorAll('#nav a');
+
+// Función para desplazarse a la sección correspondiente
+function scrollToSection(event) {
+  event.preventDefault();
+  const targetId = event.currentTarget.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
+  const targetPosition = targetElement.offsetTop - 60;
+  window.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth'
+  });
+}
+
+// Añadir evento click a cada enlace de la navegación
+navLinks.forEach(link => {
+  link.addEventListener('click', scrollToSection);
+});
+
+  </script>
+</body>
+</html>  
